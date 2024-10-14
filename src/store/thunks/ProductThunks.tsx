@@ -34,15 +34,12 @@ export const addProduct = (product: Product) => {
   return async (dispatch: Dispatch) => {
     dispatch(addProductRequest());
 
-    console.log(product)
-
     try {
       const response = await productApi.post('/products', product);
       const {data: addedProduct, message} = response.data;
       dispatch(addProductSuccess(addedProduct));
       return {success: true, message};
     } catch (error: any) {
-      console.log(error);
       let errorMessage = 'Ocurrió un error inesperado.';
       if (
         error.response &&
@@ -89,7 +86,6 @@ export const deleteProduct = (product: Product) => {
     dispatch(deleteProductRequest());
 
     const {id} = product;
-    console.log(id)
 
     try {
       const response = await productApi.delete(`/products/${id}`);
@@ -104,7 +100,6 @@ export const deleteProduct = (product: Product) => {
       ) {
         errorMessage = error.response.data.message;
       }
-      console.log(errorMessage);
       dispatch(deleteProductFailure(errorMessage));
       return {success: false, message: errorMessage};
     }

@@ -58,12 +58,10 @@ const ProductDetail: React.FC<ComponentProps> = () => {
   };
 
   const onHandleDeleteConfirm = async () => {
-    console.log('in..');
+
     const result = await dispatch(deleteProduct(productDetail));
 
     const {success, message} = result;
-
-    console.log(result)
 
     if (success) {
       setConfirmModal({...alertMessages, visible: false});
@@ -88,7 +86,6 @@ const ProductDetail: React.FC<ComponentProps> = () => {
     }
   };
 
-  console.log(alertMessages)
 
   return (
     <View style={styles.mainContainer}>
