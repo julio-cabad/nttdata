@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const initialFinancialProductsValues = {
+export const initialProductsValues = {
   id: "",
   name: "",
   description: "",

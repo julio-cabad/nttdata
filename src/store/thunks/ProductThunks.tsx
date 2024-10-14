@@ -1,5 +1,5 @@
 import {Dispatch} from 'redux';
-import productApi from '../../api/ProductLisApi.tsx';
+import productApi from '../../api/ProductApi.tsx';
 import {
   fetchProductsRequest,
   fetchProductsSuccess,

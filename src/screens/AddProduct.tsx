@@ -8,7 +8,7 @@ import FormTextInput from '../components/common/FormTextInput.tsx';
 import SubmitButton from '../components/common/SubmitButton.tsx';
 import {
   addProductSchema,
-  initialFinancialProductsValues,
+  initialProductsValues,
 } from '../validations/Schemas.tsx';
 import {StateType} from '../types/Product.tsx';
 
@@ -102,7 +102,7 @@ const AddProduct: React.FC<ComponentProps> = () => {
           resetScrollToCoords={{x: 0, y: 0}}>
           <Formik
             validationSchema={addProductSchema}
-            initialValues={initialFinancialProductsValues}
+            initialValues={initialProductsValues}
             onSubmit={onSubmit}>
             {({
               handleChange,
